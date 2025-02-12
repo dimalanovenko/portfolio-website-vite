@@ -14,11 +14,11 @@ const ToggleButton = () => {
         >
             {theme === 'light' ?
                 <FaSun
-                    className='w-5 h-5 text-zinc-900'
+                    className='lg:w-5 lg:h-5 w-7 h-7 text-zinc-900'
                 />
                 :
                 <FaMoon
-                    className='w-5 h-5 text-white'
+                    className='lg:w-5 lg:h-5 w-7 h-7 text-white'
                 />
             }
         </motion.div>

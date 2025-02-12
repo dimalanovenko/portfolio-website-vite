@@ -11,8 +11,8 @@ const Title = ({title}) => {
     return (
         <div
             onScroll={handleScroll}
-            className={`${scrollClass} w-10/12 mx-auto mb-20 flex flex-col items-center`}>
-            <h1 className={`font-bold text-4xl ${theme === 'dark' ? 'text-white' : 'text-zinc-900'}`}>
+            className={`${scrollClass} w-10/12 mx-auto lg:mb-20 mb-10 flex flex-col items-center`}>
+            <h1 className={`font-bold lg:text-4xl text-2xl ${theme === 'dark' ? 'text-white' : 'text-zinc-900'}`}>
                 {title}
                 <div className={`${theme === 'dark' ? 'bg-pink-400' : 'bg-blue-500'} w - full h-1  mt-0.5`}/>
             </h1>

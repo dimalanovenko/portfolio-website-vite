@@ -15,7 +15,7 @@ const Hero = () => {
             >
 
                 <div
-                    className='w-full flex flex-row justify-between items-center'
+                    className='w-full flex lg:flex-row flex-col justify-between items-center lg:text-left text-center'
                 >
 
                     <div
@@ -24,18 +24,19 @@ const Hero = () => {
                     >
                         <div>
                             <h1
-                                className='text-5xl font-bold'
+                                className='lg:text-5xl text-3xl font-bold'
                             >
                                 Dima Lanovenko
                             </h1>
                             <h2
-                                className={`text-xl font-light 
+                                className={`lg:text-xl text-lg font-light 
                                 ${theme === 'dark' ? 'text-pink-400' : 'text-blue-500'}`}
-                            >Front End developer
+                            >
+                                Front End developer
                             </h2>
                         </div>
 
-                        <p className="text-md">
+                        <p className="lg:text-lg text-sm">
                             I am a Frontend Developer with a passion <br/>
                             for creating intuitive, responsive, <br/>
                             and visually appealing web applications. <br/>
@@ -48,7 +49,7 @@ const Hero = () => {
                     <img
                         src={heroImg}
                         alt='portfolio'
-                        className='w-130 h-120 rounded-lg'
+                        className='lg:w-130 lg:h-120 w-80 h-80 lg:mt-0 mt-10 rounded-lg'
                     />
                 </div>
             </div>

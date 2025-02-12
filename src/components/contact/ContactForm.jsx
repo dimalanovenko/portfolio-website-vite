@@ -50,17 +50,17 @@ const ContactForm = () => {
     };
 
     return (
-        <form
-            className="flex flex-col gap-2"
+        <form className="flex flex-col lg:gap-4 gap-2.5"
             ref={form}
             onSubmit={sendEmail}>
-            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-zinc-800'} font-light text-xl`}>
+            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-zinc-800'} 
+                font-light text-lg lg:text-2xl`}>
                 Name
             </h1>
             <input
                 value={value.name}
                 onChange={handleNameChange}
-                className={`w-[285px] py-1 px-2 border rounded-lg ${theme === 'dark' ? 'border-pink-400 text-white' : 'border-blue-500 text-zinc-800'} `}
+                className={`lg:w-120 w-70 lg:py-2 py-1 px-2 border rounded-lg ${theme === 'dark' ? 'border-pink-400 text-white' : 'border-blue-500 text-zinc-800'} `}
                 type="text"
                 name="name"
                 placeholder="Your Name"
@@ -68,13 +68,14 @@ const ContactForm = () => {
             <h1 className={`${!isValid.name && value.name !== '' ? 'inline' : 'hidden'} text-red-500`}>
                 Write down the valid name
             </h1>
-            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-zinc-800'} font-light text-xl`}>
+            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-zinc-800'} 
+                font-light text-lg lg:text-2xl`}>
                 Email
             </h1>
             <input
                 value={value.email}
                 onChange={handleEmailChange}
-                className={`w-[285px] py-1 px-2 border rounded-lg ${theme === 'dark' ? 'border-pink-400 text-white' : 'text-zinc-800 border-blue-500 '} `}
+                className={`lg:w-120 w-70 lg:py-2 py-1 px-2 border rounded-lg ${theme === 'dark' ? 'border-pink-400 text-white' : 'text-zinc-800 border-blue-500 '} `}
                 type="email"
                 name="email"
                 placeholder="Your Email"
@@ -82,29 +83,32 @@ const ContactForm = () => {
             <h1 className={`${!isValid.email && value.email !== '' ? 'inline' : 'hidden'} text-red-500`}>
                 Write down the valid email address
             </h1>
-            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-zinc-800'} font-light text-xl`}>
+            <h1 className={`${theme === 'dark' ? 'text-white' : 'text-zinc-800'} 
+                font-light text-lg lg:text-2xl`}>
                 Message
             </h1>
             <textarea
                 value={value.message}
                 onChange={handleMessageChange}
-                className={`w-[285px] h-40 py-1 px-2 border rounded-lg resize-none ${theme === 'dark' ? 'border-pink-400 text-white' : 'border-blue-500 text-zinc-800'} `}
+                className={`lg:w-120 w-70 lg:h-50 h-30 py-1 px-2 border rounded-lg resize-none ${theme === 'dark' ? 'border-pink-400 text-white' : 'border-blue-500 text-zinc-800'} `}
                 name="message"
                 placeholder="Your Message"
                 required/>
             <h1 className={`${!isValid.message && value.message !== '' ? 'inline' : 'hidden'} text-red-500`}>
                 Write down the valid message
             </h1>
-            <motion.button
-                whileHover={{scale: 1.1,}}
-                className={`cursor-pointer py-3 px-6 mt-3 rounded-2xl mb-20
+            <div className="flex items-center">
+                <motion.button
+                    whileHover={{scale: 1.1,}}
+                    className={`w-full cursor-pointer lg:py-4 py-3 lg:px-8 mt-3 rounded-2xl mb-20 text-lg
                 ${theme === 'dark' ? 'bg-zinc-800 text-pink-400 hover:bg-pink-400 hover:text-zinc-800'
-                    : 'border bg-blue-500 text-white hover:bg-gray-100 hover:text-blue-500 hover:border-blue-500'} `}
-                onClick={() => isValid.name && isValid.email && isValid.message ? sendEmail
-                    : alert('Please enter a valid information')}
-            >
-                Send
-            </motion.button>
+                        : 'border bg-blue-500 text-white hover:bg-gray-100 hover:text-blue-500 hover:border-blue-500'} `}
+                    onClick={() => isValid.name && isValid.email && isValid.message ? sendEmail
+                        : alert('Please enter a valid information')}
+                >
+                    Send
+                </motion.button>
+            </div>
         </form>
     );
 };

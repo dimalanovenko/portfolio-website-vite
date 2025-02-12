@@ -8,11 +8,10 @@ const Navbar = () => {
 
     return (
         <section
-            className={`w-full fixed z-100 ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`}
+            className={`w-full lg:fixed sticky top-0 left-0 z-100 ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`}
         >
             <nav
-                style={{ margin: '0 auto', padding: '10px' }}
-                className='w-10/12 flex'
+                className='w-10/12 flex mx-auto my-0 p-[10px]'
             >
                 <div
                     className='w-full flex flex-row justify-between items-center'
@@ -20,7 +19,7 @@ const Navbar = () => {
                     <img
                         src={theme === 'dark' ? logo : logoZinc}
                         alt="logo"
-                        className='w-10 h-10 '
+                        className='lg:w-10 lg:h-10 w-13 h-13'
                     />
                     <ToggleButton />
                 </div>
